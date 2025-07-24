@@ -1,0 +1,17 @@
+@use "mixins" as *;
+
+// ----COLORS----
+$White: #f5f7fa;
+$Black: #000000;
+$LightBlack: #212529;
+$DarkGrey: #343a40;
+$Grey: #5a6268;
+$LightGrey: #6c757d;
+$VeryLightGrey: #c0c4cc;
+$BrightGreen: #42b983;
+$Green: #36a473;
+
+// === FONT SIZES ===
+$FontSmall: ptr(12px);
+$FontBase: ptr(16px);
+$FontLarge: ptr(20px);

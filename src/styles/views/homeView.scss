@@ -1,0 +1,6 @@
+@use "../mixins" as *;
+@use "../variables" as *;
+h1 {
+  font-size: $FontLarge;
+  color: $Black;
+}

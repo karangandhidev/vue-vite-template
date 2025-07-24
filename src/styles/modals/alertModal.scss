@@ -1,0 +1,120 @@
+@use "../mixins" as *;
+@use "../variables" as *;
+
+// Keyframe animations for a smooth entrance
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+
+// The full-screen background overlay
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000; // Ensure it's on top of other content
+  animation: fadeIn 0.3s ease-out;
+}
+
+// The main modal container that holds the content
+.modal-box {
+  position: fixed; // Use fixed positioning for centering
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); // Precise centering
+  animation: scaleIn 0.3s ease-out;
+}
+
+// The content area of the modal
+.alert-modal {
+  background: $White;
+  padding: 24px 32px;
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  width: 90vw;
+  max-width: 450px; // Set a max-width for larger screens
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 16px; // Space between title, message, and actions
+}
+
+// Style for the optional title
+.alert-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: $DarkGrey;
+  margin: 0;
+}
+
+// Style for the main message
+.alert-message {
+  font-size: 1rem;
+  color: $LightBlack;
+  line-height: 1.5;
+  margin: 0;
+}
+
+// Container for the action buttons
+.modal-actions {
+  display: flex;
+  justify-content: center; // Center buttons
+  gap: 12px; // Space between buttons
+  margin-top: 16px;
+}
+
+// Base button styles
+.btn {
+  padding: 10px 20px;
+  border-radius: 8px;
+  border: 1px solid transparent;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+
+  // Primary action button (e.g., "Confirm", "Okay")
+  &.primary {
+    background-color: $BrightGreen;
+    color: white;
+    offwhite: $BrightGreen;
+
+    &:hover {
+      background-color: $Green;
+      offwhite: $Green;
+    }
+  }
+
+  // Secondary action button (e.g., "Cancel")
+  &.secondary {
+    background-color: transparent;
+    color: $LightGrey;
+    offwhite: $White;
+
+    &:hover {
+      background-color: #f8f9fa; // A very light grey for hover
+      color: $Grey;
+    }
+  }
+}

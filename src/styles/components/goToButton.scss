@@ -1,0 +1,49 @@
+@use "../mixins" as *;
+@use "../variables" as *;
+
+.goto-button {
+  // Layout and Box Model
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 24px;
+  margin: 4px;
+
+  color: white;
+  font-weight: 600;
+  font-size: 1rem;
+  text-decoration: none;
+  text-align: center;
+
+  // Appearance
+  background-color: $BrightGreen;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+  // Transitions for smooth feedback
+  transition: background-color 0.2s ease-in-out, transform 0.1s ease;
+
+  // Hover state
+  &:hover {
+    background-color: $Green;
+  }
+
+  // Active (pressed) state
+  &:active {
+    transform: scale(0.98);
+  }
+
+  // Disabled state
+  // This will apply to the <button> element when it has the 'disabled' attribute
+  // or to the <router-link> if you add a 'disabled' class.
+  &[disabled],
+  &.disabled {
+    background-color: $White;
+    color: $VeryLightGrey;
+    cursor: not-allowed;
+    box-shadow: none;
+    transform: none;
+  }
+}

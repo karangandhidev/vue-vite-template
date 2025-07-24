@@ -1,0 +1,11 @@
+@use "./global";
+
+// --- Views ---
+@use "./views/homeView";
+@use "./views/aboutView";
+
+// --- Components ---
+@use "./components/goToButton";
+
+// --- Modals ---
+@use "./modals/alertModal";
